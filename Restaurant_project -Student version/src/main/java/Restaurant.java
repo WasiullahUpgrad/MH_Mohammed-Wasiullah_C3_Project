@@ -66,8 +66,15 @@ public class Restaurant {
     }
 
     public int calculateTotalPrice(ArrayList<String> itemSelected){
-
-        return 0;
+        int totalPrice = 0;
+        for (int index=0;index<itemSelected.size(); index++){
+            for(Item items:menu) {
+                if(itemSelected.get(index)==items.getName()){
+                    totalPrice = totalPrice + items.getPrice();
+                }
+            }
+        }
+        return totalPrice;
     }
 
 }
