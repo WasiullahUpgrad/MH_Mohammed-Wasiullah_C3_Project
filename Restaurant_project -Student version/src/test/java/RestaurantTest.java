@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -53,4 +54,12 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void cart_total_value_should_return_for_the_selected_items(){
+        ArrayList<String> itemSelected=new ArrayList<String>();
+        itemSelected.add("Vegetable lasagne");
+        itemSelected.add("Sweet corn soup");
+
+        assertEquals(388, restaurant.calculateTotalPrice(itemSelected));
+    }
 }

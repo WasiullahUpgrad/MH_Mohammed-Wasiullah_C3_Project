@@ -65,4 +65,9 @@ public class Restaurant {
         return name;
     }
 
+    public int calculateTotalPrice(ArrayList<String> itemSelected){
+
+        return 0;
+    }
+
 }
